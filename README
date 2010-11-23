@@ -1,0 +1,24 @@
+guiskel -- Skeletons for Python gui applications
+
+You'd like to create a new desktop GUI app, but you're not sure what toolkit to pick? With guiskel, you can fool around with pre-created toy projects in every GUI toolkit supported by Python.
+
+HOW TO USE
+
+1. Install Python 3.1+
+2. Install project-dependant dependencies.
+3. Run "python build.py <sub-project name>"
+4. Run "python run.py"
+
+DEPENDENCIES
+
+qt:
+ - PyQt 4.8+ from http://www.riverbankcomputing.co.uk/
+cocoa:
+ - PyObjC 2.3+ from http://pyobjc.sourceforge.net/
+ - py2app 0.5.3+ from http://bitbucket.org/ronaldoussoren/py2app
+
+NOTES
+
+These skeleton projects follow a design pattern I called "cross-toolkit development" and I talk about in in my article at http://www.hardcoded.net/articles/cross-toolkit-software.htm . You might want to read about it.
+
+I lied to you, it's not all GUI supported by Python that are included here, just a few, but that's because I don't know them all! Please, feel free to contribute your own skeleton project! Repository is at http://bitbucket.org/hsoft/guiskel
