@@ -1,6 +1,7 @@
 guiskel -- Skeletons for Python gui applications
 
-You'd like to create a new desktop GUI app, but you're not sure what toolkit to pick? With guiskel, you can fool around with pre-created toy projects in every GUI toolkit supported by Python.
+You'd like to create a new desktop GUI app, but you're not sure what toolkit to pick? With guiskel,
+you can fool around with pre-created toy projects in every GUI toolkit supported by Python.
 
 HOW TO USE
 
@@ -19,6 +20,10 @@ cocoa:
 
 NOTES
 
-These skeleton projects follow a design pattern I called "cross-toolkit development" and I talk about in in my article at http://www.hardcoded.net/articles/cross-toolkit-software.htm . You might want to read about it.
+These skeleton projects follow a design pattern I called "cross-toolkit development" and I talk
+about in in my article at http://www.hardcoded.net/articles/cross-toolkit-software.htm . You might
+want to read about it.
 
-I lied to you, it's not all GUI supported by Python that are included here, just a few, but that's because I don't know them all! Please, feel free to contribute your own skeleton project! Repository is at http://bitbucket.org/hsoft/guiskel
+I lied to you, it's not all GUI supported by Python that are included here, just a few, but that's
+because I don't know them all! Please, feel free to contribute your own skeleton project! Repository
+is at http://bitbucket.org/hsoft/guiskel
