@@ -17,6 +17,8 @@ qt:
 cocoa:
  - PyObjC 2.3+ from http://pyobjc.sourceforge.net/
  - py2app 0.5.3+ from http://bitbucket.org/ronaldoussoren/py2app
+tk:
+ - None
 
 NOTES
 

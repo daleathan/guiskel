@@ -3,7 +3,7 @@ import os
 import os.path as op
 import shutil
 
-PROJNAMES = ['qt', 'cocoa']
+PROJNAMES = ['qt', 'cocoa', 'tk']
 
 def main(projname):
     if projname == 'cocoa':
