@@ -1,17 +1,15 @@
+#import <Python.h>
 #import "MainWindow.h"
+#import "PyMainWindow.h"
 
 @implementation MainWindow
 - (void)awakeFromNib
 {
     [self window];
-    NSString *pluginPath = [[NSBundle mainBundle] pathForResource:@"pyplugin" ofType:@"plugin"];
-    NSBundle *pluginBundle = [NSBundle bundleWithPath:pluginPath];
-    [pluginBundle load];
-    Class PyMainWindow = [pluginBundle classNamed:@"PyMainWindow"];
     py = [[PyMainWindow alloc] init];
     nameTextHolder = [[TextHolder alloc] initWithTextField:nameTextField];
     msgTextHolder = [[TextHolder alloc] initWithTextField:msgTextField];
-    [py setNameHolder:[nameTextHolder py] andMsgHolder:[msgTextHolder py]];
+    [py setNameHolder:[[nameTextHolder py] pyRef] andMsgHolder:[[msgTextHolder py] pyRef]];
 }
 
 - (void)dealloc

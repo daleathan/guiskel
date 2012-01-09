@@ -1,13 +1,12 @@
 #import "TextHolder.h"
+#import "ObjP.h"
 
 @implementation TextHolder
 - (id)initWithTextField:(NSTextField *)aTextField
 {
     self = [super init];
-    NSString *pluginPath = [[NSBundle mainBundle] pathForResource:@"pyplugin" ofType:@"plugin"];
-    NSBundle *pluginBundle = [NSBundle bundleWithPath:pluginPath];
-    Class PyTextHolder = [pluginBundle classNamed:@"PyTextHolder"];
-    py = [[PyTextHolder alloc] initWithView:self];
+    PyObject *pView = ObjP_classInstanceWithRef(@"TextHolderView", @"TextHolderView", self);
+    py = [[PyTextHolder alloc] initWithView:pView];
     textField = [aTextField retain];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:)
         name:NSControlTextDidChangeNotification object:nil];

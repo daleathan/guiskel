@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "PyInter.h"
+#import "PyTextHolder.h"
 
 @interface TextHolder : NSObject
 {

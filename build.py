@@ -5,21 +5,33 @@ import shutil
 
 PROJNAMES = ['qt', 'cocoa', 'tk']
 
+def build_cocoa():
+    import objp.o2p
+    import objp.p2o
+    sys.path.insert(0, 'cocoa')
+    import pyplugin
+    objp.o2p.generate_objc_code(pyplugin.PyMainWindow, 'cocoa/autogen')
+    objp.o2p.generate_objc_code(pyplugin.PyTextHolder, 'cocoa/autogen')
+    objp.p2o.generate_python_proxy_code('cocoa/TextHolderView.h', 'build/TextHolderView.m')
+    from setuptools import setup, Extension
+    exts = [
+        Extension("TextHolderView", ['build/TextHolderView.m', 'build/ObjP.m'],
+            extra_link_args=["-framework", "Foundation"]),
+    ]
+    setup(
+        script_args = ['build_ext', '--inplace'],
+        ext_modules = exts,
+    )
+    pydest = 'build/py'
+    if not op.exists(pydest):
+        os.mkdir(pydest)
+    shutil.copy('TextHolderView.so', pydest)
+    shutil.copy('cocoa/pyplugin.py', pydest)
+    shutil.copytree('core', op.join(pydest, 'core'))
+
 def main(projname):
     if projname == 'cocoa':
-        from setuptools import setup
-        setup(
-            script_args = ['py2app'],
-            plugin = ['cocoa/pyplugin.py'],
-            setup_requires = ['py2app'],
-        )
-        pluginpath = 'cocoa/pyplugin.plugin'
-        if op.exists(pluginpath):
-            shutil.rmtree(pluginpath)
-        shutil.move('dist/pyplugin.plugin', pluginpath)
-        os.chdir('cocoa')
-        os.system('xcodebuild')
-        os.chdir('..')
+        build_cocoa()
     runtemplate_path = op.join(projname, 'runtemplate.py')
     shutil.copy(runtemplate_path, 'run.py')
 

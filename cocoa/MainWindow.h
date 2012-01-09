@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "TextHolder.h"
-#import "PyInter.h"
+#import "PyMainWindow.h"
 
 @interface MainWindow : NSWindowController
 {

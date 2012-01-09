@@ -1,11 +1,15 @@
 syntax: glob
 
 *.pyc
+*.so
+__pycache__
 .DS_Store
+*.xcodeproj/xcuserdata
+*.xcodeproj/project.xcworkspace/xcuserdata
 run.py
 build
 dist
-cocoa/pyplugin.plugin
 cocoa/build
+cocoa/autogen
 cocoa/guiskel.xcodeproj/*.mode1v3
 cocoa/guiskel.xcodeproj/*.pbxuser

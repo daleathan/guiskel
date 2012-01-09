@@ -5,7 +5,7 @@ you can fool around with pre-created toy projects in every GUI toolkit supported
 
 HOW TO USE
 
-1. Install Python 3.1+
+1. Install Python 3.2+
 2. Install project-dependant dependencies.
 3. Run "python build.py <sub-project name>"
 4. Run "python run.py"
@@ -15,8 +15,10 @@ DEPENDENCIES
 qt:
  - PyQt 4.8+ from http://www.riverbankcomputing.co.uk/
 cocoa:
- - PyObjC 2.3+ from http://pyobjc.sourceforge.net/
- - py2app 0.5.3+ from http://bitbucket.org/ronaldoussoren/py2app
+ - XCode 4
+ - ObjP from http://bitbucket.org/hsoft/objp
+ NOTE: I'm currently in the middle of developing ObjP and converting guiskel to it from PyObjC
+ (as a proof of concept). Currently, the executable produced can only be ran on the dev machine.
 tk:
  - None
 
