@@ -27,7 +27,14 @@ def build_cocoa():
         os.mkdir(pydest)
     shutil.copy('TextHolderView.so', pydest)
     shutil.copy('cocoa/pyplugin.py', pydest)
-    shutil.copytree('core', op.join(pydest, 'core'))
+    # For some strange reason, a "site.py" file is required at pydest.
+    with open(op.join(pydest, 'site.py'), 'w'):
+        pass
+    from pluginbuilder import copy_embeddable_python_dylib, get_python_header_folder, collect_dependencies
+    copy_embeddable_python_dylib('build')
+    if not op.exists('build/PythonHeaders'):
+        os.symlink(get_python_header_folder(), 'build/PythonHeaders')
+    collect_dependencies('cocoa/pyplugin.py', pydest)
 
 def main(projname):
     if projname == 'cocoa':

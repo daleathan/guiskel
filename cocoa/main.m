@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import <Python.h>
+#include <wchar.h>
 
 int main(int argc, char *argv[])
 {
@@ -7,6 +8,9 @@ int main(int argc, char *argv[])
     NSString *respath = [[NSBundle mainBundle] resourcePath];
     NSString *pypath = [respath stringByAppendingPathComponent:@"py"];
     NSString *mainpy = [pypath stringByAppendingPathComponent:@"pyplugin.py"];
+    wchar_t wPythonPath[PATH_MAX+1];
+    mbstowcs(wPythonPath, [pypath fileSystemRepresentation], PATH_MAX+1);
+    Py_SetPath(wPythonPath);
     Py_Initialize();
     FILE* fp = fopen([mainpy UTF8String], "r");
     PyRun_SimpleFile(fp, "pyplugin.py");

@@ -13,11 +13,25 @@
 		CE79A9F014BB8161004CCC20 /* ObjP.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79A9ED14BB8161004CCC20 /* ObjP.m */; };
 		CE79A9F114BB8161004CCC20 /* PyMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79A9EF14BB8161004CCC20 /* PyMainWindow.m */; };
 		CE79A9F614BB85D4004CCC20 /* PyTextHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79A9F514BB85D4004CCC20 /* PyTextHolder.m */; };
+		CE873FD614BCFDD10013A413 /* Python in Frameworks */ = {isa = PBXBuildFile; fileRef = CE873FD514BCFDD10013A413 /* Python */; };
+		CE873FD714BCFDE60013A413 /* Python in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE873FD514BCFDD10013A413 /* Python */; };
 		CE9B2184129BD114004334C2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9B2183129BD114004334C2 /* MainMenu.xib */; };
 		CE9B2189129BD28A004334C2 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9B2188129BD28A004334C2 /* MainWindow.m */; };
 		CE9B218914BBA54200E837F7 /* py in Resources */ = {isa = PBXBuildFile; fileRef = CE9B218814BBA54200E837F7 /* py */; };
-		CEC60E1414BB6F7E00AB0EE8 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC60E1314BB6F7E00AB0EE8 /* Python.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE76425114BCA71400FC0C4B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE873FD714BCFDE60013A413 /* Python in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -35,11 +49,11 @@
 		CE79A9EF14BB8161004CCC20 /* PyMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PyMainWindow.m; path = autogen/PyMainWindow.m; sourceTree = "<group>"; };
 		CE79A9F414BB85D4004CCC20 /* PyTextHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PyTextHolder.h; path = autogen/PyTextHolder.h; sourceTree = "<group>"; };
 		CE79A9F514BB85D4004CCC20 /* PyTextHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PyTextHolder.m; path = autogen/PyTextHolder.m; sourceTree = "<group>"; };
+		CE873FD514BCFDD10013A413 /* Python */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Python; path = ../build/Python; sourceTree = "<group>"; };
 		CE9B2183129BD114004334C2 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		CE9B2187129BD28A004334C2 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = SOURCE_ROOT; };
 		CE9B2188129BD28A004334C2 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = SOURCE_ROOT; };
 		CE9B218814BBA54200E837F7 /* py */ = {isa = PBXFileReference; lastKnownFileType = folder; name = py; path = ../build/py; sourceTree = "<group>"; };
-		CEC60E1314BB6F7E00AB0EE8 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = /Library/Frameworks/Python.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC60E1414BB6F7E00AB0EE8 /* Python.framework in Frameworks */,
+				CE873FD614BCFDD10013A413 /* Python in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +84,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEC60E1314BB6F7E00AB0EE8 /* Python.framework */,
+				CE873FD514BCFDD10013A413 /* Python */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -156,6 +170,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				CE76425114BCA71400FC0C4B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -226,14 +241,17 @@
 		C01FCF4C08A954540054247B /* release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				HEADER_SEARCH_PATHS = /Library/Frameworks/Python.framework/Headers;
 				INFOPLIST_FILE = "guiskel-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../build\"",
+				);
 				PRODUCT_NAME = guiskel;
+				SDKROOT = macosx10.6;
 			};
 			name = release;
 		};
@@ -244,6 +262,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../build/PythonHeaders\"";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				SDKROOT = "";
 			};
 			name = release;
