@@ -19,6 +19,8 @@ cocoa:
  - ObjP from http://bitbucket.org/hsoft/objp
 tk:
  - None
+gtk:
+ - PyGObject 3.0
 
 NOTES
 

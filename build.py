@@ -3,7 +3,7 @@ import os
 import os.path as op
 import shutil
 
-PROJNAMES = ['qt', 'cocoa', 'tk']
+PROJNAMES = ['qt', 'cocoa', 'tk', 'gtk']
 
 def build_cocoa():
     import objp.o2p
