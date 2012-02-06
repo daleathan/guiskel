@@ -17,6 +17,9 @@ class PyMainWindow:
         self.model.say_hello()
     
 
+class TextHolderView:
+    def updateText(self): pass
+
 class PyTextHolder:
     def __init__(self, view: pyref):
         self.view = view

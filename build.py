@@ -12,7 +12,8 @@ def build_cocoa():
     import pyplugin
     objp.o2p.generate_objc_code(pyplugin.PyMainWindow, 'cocoa/autogen')
     objp.o2p.generate_objc_code(pyplugin.PyTextHolder, 'cocoa/autogen')
-    objp.p2o.generate_python_proxy_code('cocoa/TextHolderView.h', 'build/TextHolderView.m')
+    textholder_spec = objp.o2p.spec_from_python_class(pyplugin.TextHolderView)
+    objp.p2o.generate_python_proxy_code_from_clsspec([textholder_spec], 'build/TextHolderView.m')
     from setuptools import setup, Extension
     exts = [
         Extension("TextHolderView", ['build/TextHolderView.m', 'build/ObjP.m'],

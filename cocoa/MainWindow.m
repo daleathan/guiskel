@@ -1,4 +1,3 @@
-#import <Python.h>
 #import "MainWindow.h"
 #import "PyMainWindow.h"
 

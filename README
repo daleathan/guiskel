@@ -17,8 +17,6 @@ qt:
 cocoa:
  - XCode 4
  - ObjP from http://bitbucket.org/hsoft/objp
- NOTE: I'm currently in the middle of developing ObjP and converting guiskel to it from PyObjC
- (as a proof of concept). Currently, the executable produced can only be ran on the dev machine.
 tk:
  - None
 
