@@ -6,6 +6,8 @@ __pycache__
 .DS_Store
 *.xcodeproj/xcuserdata
 *.xcodeproj/project.xcworkspace/xcuserdata
+.waf*
+.lock-waf*
 run.py
 build
 dist
@@ -13,3 +15,5 @@ cocoa/build
 cocoa/autogen
 cocoa/guiskel.xcodeproj/*.mode1v3
 cocoa/guiskel.xcodeproj/*.pbxuser
+cocoa/guiskel.xcodeproj/project.xcworkspace
+xibless/autogen

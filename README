@@ -17,6 +17,12 @@ qt:
 cocoa:
  - XCode 4
  - ObjP from http://bitbucket.org/hsoft/objp
+ - pluginbuilder http://bitbucket.org/hsoft/pluginbuilder
+xibless:
+ - Apple's Command line tools (or XCode) at http://developer.apple.com/downloads
+ - ObjP from http://bitbucket.org/hsoft/objp
+ - pluginbuilder http://bitbucket.org/hsoft/pluginbuilder
+ - xibless from http://bitbucket.org/hsoft/xibless
 tk:
  - None
 gtk:
