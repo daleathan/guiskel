@@ -27,6 +27,11 @@ tk:
  - None
 gtk:
  - PyGObject 3.0
+vala-dbus:
+ - gtk+3.0
+ - gio-2.0
+ - python-dbus
+ - PyGObject 3.0
 
 NOTES
 

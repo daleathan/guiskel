@@ -3,7 +3,7 @@ import os
 import os.path as op
 import shutil
 
-PROJNAMES = ['qt', 'cocoa', 'tk', 'gtk', 'xibless']
+PROJNAMES = ['qt', 'cocoa', 'tk', 'gtk', 'xibless', 'vala-dbus']
 
 def build_cocoa_base(cocoa_path):
     import objp.o2p
@@ -51,11 +51,20 @@ def build_xibless():
     os.system('%s waf' % sys.executable)
     os.chdir('..')
 
+def build_vala_dbus():
+    os.chdir('vala-dbus')
+    os.system('%s ../xibless/waf configure' % sys.executable)
+    os.system('%s ../xibless/waf' % sys.executable)
+    os.chdir('..')
+    print("run.py will start a DBus server. To run the GUI, you need to execute vala-dbus/build/guiskel")
+    
 def main(projname):
     if projname == 'cocoa':
         build_cocoa()
     elif projname == 'xibless':
         build_xibless()
+    elif projname == 'vala-dbus':
+        build_vala_dbus()
     runtemplate_path = op.join(projname, 'runtemplate.py')
     shutil.copy(runtemplate_path, 'run.py')
 
